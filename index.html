@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizzling Platter - Join Our Team</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e63946; /* Vibrant red */
+            --secondary: #f8edeb; /* Soft cream */
+            --accent: #f4a261; /* Warm orange */
+            --dark: #1d3557; /* Navy blue */
+            --light: #ffffff;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--secondary);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background-color: var(--light);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="%23f8edeb"></path></svg>') no-repeat;
+            background-size: cover;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c1121f;
+            border-color: #c1121f;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .brand-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            background-color: var(--light);
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .brand-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .employee-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background-color: var(--light);
+        }
+        
+        .employee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .employee-img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            position: relative;
+            padding: 0 1rem;
+        }
+        
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-quote::before {
+            top: -20px;
+            left: -5px;
+        }
+        
+        .testimonial-quote::after {
+            bottom: -40px;
+            right: -5px;
+        }
+        
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .benefits-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .benefits-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .application-form {
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="%231d3557"></path></svg>') no-repeat;
+            background-size: cover;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 5rem 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SIZZING PLATTER</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Who We Are</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Join Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Our Brands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Our Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Catering</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Join Our Culinary Family</h1>
+            <p class="lead mb-5" style="max-width: 700px; margin: 0 auto;">At Sizzling Platter, we don't just serve food - we create experiences. Join our team and be part of something extraordinary.</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="#openings" class="btn btn-primary btn-lg px-4">View Openings</a>
+                <a href="#apply" class="btn btn-outline-light btn-lg px-4">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <!-- Why Join Us -->
+        <section class="py-5">
+            <h2 class="text-center section-title">Why Join Sizzling Platter?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="brand-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4 class="mb-3">Growth Opportunities</h4>
+                        <p>From entry-level to management, we provide clear career paths and training programs to help you grow.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="brand-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="mb-3">Great Benefits</h4>
+                        <p>Competitive pay, health insurance, meal discounts, and flexible scheduling for all team members.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="brand-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="mb-3">Team Culture</h4>
+                        <p>Join a supportive family where teamwork, respect, and having fun are part of our recipe for success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Brands -->
+        <section id="openings" class="py-5">
+            <h2 class="text-center section-title">Our Restaurant Brands</h2>
+            <p class="text-center mb-5">Wherever you are, we have an opening for you. We believe in each other.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="brand-card text-center p-4 h-100">
+                        <div class="brand-icon">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        <h3>Little Caesars</h3>
+                        <p class="mb-4">"Pizza! Pizza!" - Join our pizza-making team across Mexico and United States.</p>
+                        <a href="#" class="btn btn-outline-primary">View 12 Open Positions</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="brand-card text-center p-4 h-100">
+                        <div class="brand-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h3>DUNKIN'</h3>
+                        <p class="mb-4">America runs on Dunkin' - be part of our coffee and donut crew.</p>
+                        <a href="#" class="btn btn-outline-primary">View 8 Open Positions</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="brand-card text-center p-4 h-100">
+                        <div class="brand-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <h3>SizZier Burgers</h3>
+                        <p class="mb-4">Gourmet burgers with a twist - join our innovative kitchen team.</p>
+                        <a href="#" class="btn btn-outline-primary">View 5 Open Positions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Employee Stories -->
+        <section class="py-5">
+            <h2 class="text-center section-title">Our Team Stories</h2>
+            <p class="text-center mb-5">Hear from members of our Sizzling Platter family</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="employee-card h-100">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" class="employee-img" alt="Faith Huntington">
+                        <div class="p-4">
+                            <h3>Faith Huntington</h3>
+                            <p class="text-muted">Lead Manager, Colorado</p>
+                            <div class="testimonial-quote mt-3">
+                                "I started as a customer picking up pizza for my family. The energy in the restaurant made me want to be part of the team. Now I help train new managers across the region."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="employee-card h-100">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" class="employee-img" alt="Daniel DeLaCruz">
+                        <div class="p-4">
+                            <h3>Daniel DeLaCruz</h3>
+                            <p class="text-muted">Regional Manager, Texas</p>
+                            <div class="testimonial-quote mt-3">
+                                "What I love about Sizzling Platter is how they invest in their people. They saw potential in me and provided the training I needed to grow from crew member to regional manager."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Employee Benefits</h2>
+                    <p class="lead">We take care of our team members with comprehensive benefits</p>
+                    
+                    <ul class="benefits-list mt-4">
+                        <li>Competitive wages with regular performance reviews</li>
+                        <li>Health, dental, and vision insurance options</li>
+                        <li>Flexible scheduling for work-life balance</li>
+                        <li>Free meals during shifts and employee discounts</li>
+                        <li>Career advancement opportunities</li>
+                        <li>Paid training and development programs</li>
+                        <li>Referral bonuses for bringing great people onboard</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Team working together" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section id="apply" class="py-5">
+            <h2 class="text-center section-title">Apply Now</h2>
+            <p class="text-center mb-5">Ready to join our team? Fill out the form below and we'll be in touch!</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="application-form">
+                        <form id="careerForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="position" class="form-label">Position Applying For</label>
+                                    <select class="form-select" id="position" required>
+                                        <option value="" selected disabled>Select a position</option>
+                                        <option value="crew-member">Crew Member</option>
+                                        <option value="shift-leader">Shift Leader</option>
+                                        <option value="assistant-manager">Assistant Manager</option>
+                                        <option value="restaurant-manager">Restaurant Manager</option>
+                                        <option value="kitchen-staff">Kitchen Staff</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label">Preferred Location</label>
+                                    <select class="form-select" id="location" required>
+                                        <option value="" selected disabled>Select a location</option>
+                                        <option value="little-caesars-mx">Little Caesars - Mexico</option>
+                                        <option value="little-caesars-us">Little Caesars - US</option>
+                                        <option value="dunkin-mx">DUNKIN' - Mexico</option>
+                                        <option value="dunkin-us">DUNKIN' - US</option>
+                                        <option value="sizzier">SizZier Burgers</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="experience" class="form-label">Relevant Experience</label>
+                                    <textarea class="form-control" id="experience" rows="3"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="resume" class="form-label">Upload Resume</label>
+                                    <input class="form-control" type="file" id="resume" accept=".pdf,.doc,.docx">
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="consent" required>
+                                        <label class="form-check-label" for="consent">
+                                            I consent to Sizzling Platter contacting me about employment opportunities
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary w-100 py-3">Submit Application</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency Section -->
+        <section class="py-5">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-3">Transparency in Coverage</h3>
+                    <p>This link leads to the machine readable files that are made available in response to the Federal Transparency in Coverage Rule and includes negotiated service rates and out-of-network allowed amounts between recent plans and healthcare providers. The machine readable files are formatted to allow researchers, regulators, and application developers to easily access and analyze data.</p>
+                    <a href="https://www.cjapa.com/legal/compliance/machine-readable-flog" class="btn btn-primary mt-3">View Transparency Files</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-3">Sizzling Platter</h3>
+                    <p>Creating extraordinary dining experiences through exceptional people and delicious food.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-3">Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Our Brands</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Franchise Opportunities</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">News & Press</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-3">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Restaurant Row, Foodville, TX 75001</p>
+                    <p><i class="fas fa-phone-alt me-2"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i> careers@sizzlingplatter.com</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-light opacity-10">
+            <div class="text-center pt-3">
+                <p class="mb-0">&copy; 2023 Sizzling Platter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        document.getElementById('careerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your application! We will review your information and be in touch soon.');
+            this.reset();
+        });
+        
+        // Lazy loading for images
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        }
+    </script>
+</body>
+</html>
